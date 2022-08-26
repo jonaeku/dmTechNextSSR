@@ -38,13 +38,13 @@ export default function Home(props) {
 export async function getServerSideProps() {
   const city = "Karlsruhe,ger"
 
-  const getCoords = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=3a29299823c33975b374a819ae0b7a08`);
+  const getCoords = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.KEY}`);
   const coordData = await getCoords.json();
 
   const lat = coordData.coord.lat;
   const lon = coordData.coord.lon;
 
-  const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=3a29299823c33975b374a819ae0b7a08&units=metric`);
+  const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${process.env.KEY}&units=metric`);
   const weatherData = await res.json();
 
   const unixDateConverter = (unixDate) => {
