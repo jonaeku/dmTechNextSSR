@@ -30,7 +30,7 @@ export default function Home(props) {
             </a>{" "}
             Sonnencremefinder! ☀️
           </h1>
-          <h1>Heute ist der {currentDate}</h1>
+          <h1 className={styles.subtitle}>Heute ist der {currentDate}</h1>
           <h3>Aktuell sind es {Math.round(currentTemp)} °C</h3>
         </div>
         <Products products={products} />

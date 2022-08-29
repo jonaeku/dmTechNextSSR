@@ -51,11 +51,14 @@
 
 @media (max-width: 500px) {
   .title {
-    font-size: 35px;
+    font-size: 30px;
   }
   .logo {
     width: 150px;
     margin-bottom: 20px;
+  }
+  .subtitle {
+    font-size: 25px;
   }
 }
 
