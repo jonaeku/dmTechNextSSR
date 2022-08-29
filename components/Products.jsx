@@ -8,10 +8,9 @@ const Products = ({ products }) => {
     <div className={styles.productList}>
       {products.map((product) => {
         return (
-          <div>
+          <div key={product.id}>
             <a
               href={`https://www.dm.de/p${product.gtin}.html`}
-              key={product.id}
             >
               <div className={styles.productPreview}>
                 <img
