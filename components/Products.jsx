@@ -8,17 +8,22 @@ const Products = ({ products }) => {
     <div className={styles.productList}>
       {products.map((product) => {
         return (
-          <a href={`https://www.dm.de/p${product.gtin}.html`} key={product.id}>
-            <div className={styles.productPreview}>
-              <img
-                className={styles.productImg}
-                src={getImageUrl(product.imageUrlTemplates)}
-                layout="fill"
-                objectFit="contain"
-              />
-              <p>{product.title}</p>
-            </div>
-          </a>
+          <div>
+            <a
+              href={`https://www.dm.de/p${product.gtin}.html`}
+              key={product.id}
+            >
+              <div className={styles.productPreview}>
+                <img
+                  className={styles.productImg}
+                  src={getImageUrl(product.imageUrlTemplates)}
+                  layout="fill"
+                  objectFit="contain"
+                />
+                <p>{product.title}</p>
+              </div>
+            </a>
+          </div>
         );
       })}
     </div>

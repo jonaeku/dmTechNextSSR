@@ -21,7 +21,7 @@ export default function Home(props) {
       </Head>
 
       <main className={styles.main}>
-        <Image src="/DmBrandClaimIcon.svg" height={200} width={200} />
+        <img className={styles.logo} src="/DmBrandClaimIcon.svg" />
         <div className={styles.overview}>
           <h1 className={styles.title}>
             Willkommen zum{" "}

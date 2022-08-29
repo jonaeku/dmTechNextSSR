@@ -1,3 +1,14 @@
+export const getProductData = async (highestUvi) => {
+  const res = await fetch(
+    `https://product-search.services.dmtech.com/de/search/crawl?query=sonnencreme&searchType=product&sunProtectionFactorRange=${spfCalculator(
+      highestUvi
+    )}&type=search&brandName=SUNDANCE&brandName=babylove&pageSize=5`
+  );
+  const productData = await res.json();
+  
+  return productData
+};
+
 const spfCalculator = (highestUvi) => {
   if (highestUvi <= 3) {
     return "Niedriger%20Schutz%20(6-10)";
@@ -12,13 +23,3 @@ const spfCalculator = (highestUvi) => {
   }
 };
 
-export const getProductData = async (highestUvi) => {
-  const res = await fetch(
-    `https://product-search.services.dmtech.com/de/search/crawl?query=sonnencreme&searchType=product&sunProtectionFactorRange=${spfCalculator(
-      highestUvi
-    )}&type=search&brandName=SUNDANCE&brandName=babylove&pageSize=5`
-  );
-  const productData = await res.json();
-  
-  return productData
-};

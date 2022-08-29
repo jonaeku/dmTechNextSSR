@@ -1,17 +1,15 @@
 .productList {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 50px;
   background-color: #f6f6f7;
   border-radius: 20px;
   padding: 20px;
+  place-items: center;
 }
 
 .productPreview {
   width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #002878;
   text-align: center;
 }
@@ -21,3 +19,4 @@
   max-height: 250px;
   object-fit: contain;
 }
+
