@@ -1,28 +1,28 @@
-import styles from '../styles/Products.module.css'
+import styles from "../styles/Products.module.css";
 
-const Products = (props) => {
-    const { productData } = props;
-    const getImageUrl = (productData) => {
-        return productData[0].replace("{transformations}", "f_auto,q_auto,c_fit")
-    }
-    return (
-        <div className={styles.productList}>
-            {
-                productData.products.map(element => {
-                    return (
-                        <a href={`https://www.dm.de/p${element.gtin}.html`} key={element.id}>
-                            <div className={styles.productPreview}>
-                                <img className={styles.productImg} src={getImageUrl(element.imageUrlTemplates)} layout='fill'
-                                    objectFit='contain' />
-                                <p>{element.title}</p>
-                            </div>
-                        </a>
-                    )
-                }
-                )
-            }
-        </div>
-    );
-}
+const Products = ({ products }) => {
+  const getImageUrl = (product) => {
+    return product[0].replace("{transformations}", "f_auto,q_auto,c_fit");
+  };
+  return (
+    <div className={styles.productList}>
+      {products.map((product) => {
+        return (
+          <a href={`https://www.dm.de/p${product.gtin}.html`} key={product.id}>
+            <div className={styles.productPreview}>
+              <img
+                className={styles.productImg}
+                src={getImageUrl(product.imageUrlTemplates)}
+                layout="fill"
+                objectFit="contain"
+              />
+              <p>{product.title}</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
+};
 
 export default Products;
