@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import Products from "../components/Products";
 import {
   getCityCoords,
@@ -12,6 +11,7 @@ import { getProductData } from "../utils/getDmData";
 
 export default function Home(props) {
   const { currentDate, currentTemp, products } = props;
+  
   return (
     <div className={styles.container}>
       <Head>
